@@ -107,7 +107,7 @@ Build strong fundamentals in cybersecurity, networking, and cryptography — and
 
 - 📹 **Video Walkthrough:** [LinkedIn Post](https://www.linkedin.com/posts/mr-manivel-r_cybersecurity-ethicalhacking-kalilinux-ugcPost-7478102713994489857-Jvxg/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGDJA9sBzSi23edH7UWChoU_mcEMAARlJJ8)
 - 🌐 **Portfolio:** [manivel-cyber-ai.github.io](https://manivel-cyber-ai.github.io)
-- 💼 **LinkedIn:** [linkedin.com/in/manivel-r](#)
+- 💼 **LinkedIn:** [linkedin.com/in/mr-manivel-r](https://www.linkedin.com/in/mr-manivel-r/)
 
 ---
 
