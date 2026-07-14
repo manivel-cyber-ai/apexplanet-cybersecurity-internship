@@ -39,7 +39,7 @@
 | Task | Topic | Timeline | Status |
 |------|-------|----------|--------|
 | [Task 1](./Task%201/) | Foundation & Environment Setup | Days 1–12 | ✅ Completed |
-| Task 2 | Network Security & Scanning | Days 13–24 | 🔄 Upcoming |
+| [Task 2](./Task%202/) | Network Security & Scanning | Days 13–24 | ✅ Completed |
 | Task 3 | Web Application Security | Days 25–36 | 🔄 Upcoming |
 | Task 4 | Exploitation & System Security | Days 37–48 | 🔄 Upcoming |
 | Task 5 | Capstone Project & Incident Response | Days 49–60 | 🔄 Upcoming |
@@ -88,7 +88,7 @@ apexplanet-cybersecurity-internship/
 - ✅ OSI Model, TCP/IP, Subnetting
 - ✅ Cryptography (Symmetric, Asymmetric, Hashing, OpenSSL)
 - ✅ Tool Familiarization (Nmap, Wireshark, Burp Suite, Netcat)
-- 🔄 Reconnaissance & Network Scanning
+- ✅ Reconnaissance & Network Scanning (Nmap, Wireshark, OpenVAS, hping3, iptables)
 - 🔄 Web Application Security (OWASP Top 10)
 - 🔄 Exploitation & Post-Exploitation
 - 🔄 Incident Response
