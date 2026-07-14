@@ -20,6 +20,7 @@ Build strong fundamentals in cybersecurity, networking, and cryptography — and
 |------|-------------|
 | `task1-notes.md` | Detailed notes covering all 6 topics of Task 1 |
 | `task1-cheatsheet.md` | Quick reference for Linux, Nmap, Wireshark, OpenSSL, Netcat |
+| `\Screenshots` | Screenshots of Kali Linux, Nmap, Wireshark, OpenSSL, Netcat |
 | `README.md` | This file |
 
 ---
