@@ -44,7 +44,7 @@ Build strong fundamentals in cybersecurity, networking, and cryptography — and
 | **Virtualization** | VirtualBox |
 | **Target VM** | Metasploitable2 |
 | **Network** | Host-Only Adapter |
-| **Host Machine** | Ryzen 7 8700F, 32GB DDR5 |
+| **Host Machine** | MY PC |
 
 ---
 
