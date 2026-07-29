@@ -126,7 +126,7 @@ Identify and exploit OWASP Top 10 vulnerabilities in a controlled lab environmen
 
 ## 🔗 Links
 
-- 📹 **Video Walkthrough:** [LinkedIn Post](#)
+- 📹 **Video Walkthrough:** [LinkedIn Post](https://www.linkedin.com/posts/mr-manivel-r_cybersecurity-ethicalhacking-websecurity-activity-7488228100615323649-bQsO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGDJA9sBzSi23edH7UWChoU_mcEMAARlJJ8)
 - 📁 **Main Repo:** [apexplanet-cybersecurity-internship](https://github.com/manivel-cyber-ai/apexplanet-cybersecurity-internship)
 - 🌐 **Portfolio:** [manivel-cyber-ai.github.io](https://manivel-cyber-ai.github.io)
 
