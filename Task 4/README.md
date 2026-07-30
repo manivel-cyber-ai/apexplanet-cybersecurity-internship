@@ -145,7 +145,7 @@ john combined.txt --wordlist=/usr/share/wordlists/rockyou.txt
 
 ## 🔗 Links
 
-- 📹 **Video Walkthrough:** [LinkedIn Post](#)
+- 📹 **Video Walkthrough:** [LinkedIn Post](https://www.linkedin.com/posts/mr-manivel-r_cybersecurity-ethicalhacking-penetrationtesting-ugcPost-7488652847006306304-2vMU/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGDJA9sBzSi23edH7UWChoU_mcEMAARlJJ8)
 - 📁 **Main Repo:** [apexplanet-cybersecurity-internship](https://github.com/manivel-cyber-ai/apexplanet-cybersecurity-internship)
 - 🌐 **Portfolio:** [manivel-cyber-ai.github.io](https://manivel-cyber-ai.github.io)
 
