@@ -40,8 +40,8 @@
 |------|-------|----------|--------|
 | [Task 1](./Task%201/) | Foundation & Environment Setup | Days 1–12 | ✅ Completed |
 | [Task 2](./Task%202/) | Network Security & Scanning | Days 13–24 | ✅ Completed |
-| [Task 3](./Task%203/) | Web Application Security | Days 25–36 |  ✅ Completed |
-| Task 4 | Exploitation & System Security | Days 37–48 | 🔄 Upcoming |
+| [Task 3](./Task%203/) | Web Application Security | Days 25–36 | ✅ Completed |
+| [Task 4](./Task%204/) | Exploitation & System Security | Days 37–48 | ✅ Completed |
 | Task 5 | Capstone Project & Incident Response | Days 49–60 | 🔄 Upcoming |
 
 ---
@@ -89,9 +89,9 @@ apexplanet-cybersecurity-internship/
 - ✅ Cryptography (Symmetric, Asymmetric, Hashing, OpenSSL)
 - ✅ Tool Familiarization (Nmap, Wireshark, Burp Suite, Netcat)
 - ✅ Reconnaissance & Network Scanning (Nmap, Wireshark, OpenVAS, hping3, iptables)
-- 🔄 Web Application Security (OWASP Top 10)
-- 🔄 Exploitation & Post-Exploitation
-- 🔄 Incident Response
+- ✅ Web Application Security (OWASP Top 10)
+- ✅ Exploitation & Post-Exploitation
+- ✅ Incident Response
 
 ---
 
