@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="420" viewBox="0 0 800 420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="800" height="420" fill="#ffffff"/>
+  <text x="400" y="35" text-anchor="middle" font-size="20" font-weight="bold" fill="#1a1a1a">DVWA Pentest Lab — Network Topology</text>
+
+  <!-- Host-only network line -->
+  <line x1="150" y1="200" x2="650" y2="200" stroke="#888" stroke-width="3" stroke-dasharray="6,4"/>
+  <text x="400" y="185" text-anchor="middle" font-size="13" fill="#555">Host-Only Adapter — 192.168.56.0/24</text>
+
+  <!-- Attacker node -->
+  <rect x="80" y="240" width="180" height="110" rx="10" fill="#fdecea" stroke="#c0392b" stroke-width="2"/>
+  <text x="170" y="270" text-anchor="middle" font-size="15" font-weight="bold" fill="#c0392b">Kali Linux</text>
+  <text x="170" y="290" text-anchor="middle" font-size="12" fill="#333">Attacker Machine</text>
+  <text x="170" y="308" text-anchor="middle" font-size="12" fill="#333">192.168.56.10</text>
+  <text x="170" y="326" text-anchor="middle" font-size="11" fill="#555">Nmap · Burp · sqlmap</text>
+  <text x="170" y="341" text-anchor="middle" font-size="11" fill="#555">Nikto · Hydra</text>
+
+  <!-- Target node -->
+  <rect x="540" y="240" width="180" height="110" rx="10" fill="#eaf4fb" stroke="#2471a3" stroke-width="2"/>
+  <text x="630" y="270" text-anchor="middle" font-size="15" font-weight="bold" fill="#2471a3">Metasploitable2</text>
+  <text x="630" y="290" text-anchor="middle" font-size="12" fill="#333">Target Machine</text>
+  <text x="630" y="308" text-anchor="middle" font-size="12" fill="#333">192.168.56.20</text>
+  <text x="630" y="326" text-anchor="middle" font-size="11" fill="#555">DVWA · Apache</text>
+  <text x="630" y="341" text-anchor="middle" font-size="11" fill="#555">PHP · MySQL</text>
+
+  <!-- connectors -->
+  <line x1="170" y1="240" x2="250" y2="200" stroke="#c0392b" stroke-width="2"/>
+  <line x1="630" y1="240" x2="550" y2="200" stroke="#2471a3" stroke-width="2"/>
+
+  <!-- host node -->
+  <rect x="310" y="70" width="180" height="80" rx="10" fill="#fef9e7" stroke="#b7950b" stroke-width="2"/>
+  <text x="400" y="100" text-anchor="middle" font-size="15" font-weight="bold" fill="#b7950b">Host OS</text>
+  <text x="400" y="120" text-anchor="middle" font-size="12" fill="#333">VirtualBox / VMware</text>
+  <text x="400" y="138" text-anchor="middle" font-size="11" fill="#555">Isolated — no bridged/NAT egress</text>
+  <line x1="400" y1="150" x2="400" y2="200" stroke="#b7950b" stroke-width="2"/>
+
+  <text x="400" y="400" text-anchor="middle" font-size="11" fill="#777">Traffic between attacker and target stays on the host-only network — no internet egress from the target VM.</text>
+</svg>
