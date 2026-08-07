@@ -5,8 +5,8 @@
 ![Domain](https://img.shields.io/badge/Domain-Cybersecurity%20%26%20Ethical%20Hacking-red)
 ![Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
 
-> 60-day AICTE-recognized Cybersecurity & Ethical Hacking Internship by **ApexPlanet Software Pvt. Ltd.**
-> Completed by **Manivel R** | B.E. CSE (AI & ML) | Anna University, Tiruchirappalli | 2026
+> 60-day AICTE-recognized cybersecurity and ethical hacking internship by ApexPlanet Software Pvt. Ltd.
+> Completed by Manivel R | B.E. CSE (AI & ML) | Anna University, Tiruchirappalli | 2026
 
 ---
 
@@ -34,7 +34,7 @@
 
 ---
 
-## 🗂️ Task Structure
+## 🗂️ Task Summary
 
 | Task | Topic | Timeline | Status |
 |------|-------|----------|--------|
@@ -42,25 +42,46 @@
 | [Task 2](./Task%202/) | Network Security & Scanning | Days 13–24 | ✅ Completed |
 | [Task 3](./Task%203/) | Web Application Security | Days 25–36 | ✅ Completed |
 | [Task 4](./Task%204/) | Exploitation & System Security | Days 37–48 | ✅ Completed |
-| Task 5 | Capstone Project & Incident Response | Days 49–60 | 🔄 Upcoming |
+| [Task 5](./Task%205/) | Capstone Project & Incident Response | Days 49–60 | ✅ Completed |
 
 ---
 
 ## 📁 Repository Structure
 
-```
+```text
 apexplanet-cybersecurity-internship/
-│
+├── README.md
 ├── Task 1/
-│   ├── task1-notes.md        # Detailed notes on all Task 1 topics
-│   └── task1-cheatsheet.md   # Quick reference for Linux, Nmap, Wireshark, etc.
-│
-├── Task 2/                   # Coming soon
-├── Task 3/                   # Coming soon
-├── Task 4/                   # Coming soon
-├── Task 5/                   # Coming soon
-│
-└── README.md
+│   ├── README.md
+│   ├── Screenshots/
+│   ├── task1-cheatsheet.md
+│   └── task1-notes.md
+├── Task 2/
+│   ├── README.md
+│   ├── ip-tables.png
+│   ├── open-vas-report.pdf
+│   ├── task2-cheatsheet.md
+│   ├── task2-nmap-report.txt
+│   └── task2-notes.md
+├── Task 3/
+│   ├── README.md
+│   ├── csrf-demo.html
+│   ├── screenshots/
+│   ├── task3-cheatsheet.md
+│   └── task3-notes.md
+├── Task 4/
+│   ├── README.md
+│   ├── malware-analysis/
+│   ├── screenshots/
+│   ├── task4-cheatsheet.md
+│   └── task4-notes.md
+└── Task 5/
+    ├── README.md
+    ├── DVWA_Pentest_Report_Template.docx
+    ├── DVWA_Pentest_Report_Template.pdf
+    ├── Task5_Procedure_Guide.md
+    ├── log_detection.py
+    └── network_diagram.svg
 ```
 
 ---
@@ -82,23 +103,22 @@ apexplanet-cybersecurity-internship/
 
 ## 📚 Skills Covered
 
-- ✅ CIA Triad, Threat Types, Attack Vectors
-- ✅ Lab Environment Setup (Kali + Metasploitable2)
-- ✅ Linux Fundamentals & Networking Commands
-- ✅ OSI Model, TCP/IP, Subnetting
-- ✅ Cryptography (Symmetric, Asymmetric, Hashing, OpenSSL)
-- ✅ Tool Familiarization (Nmap, Wireshark, Burp Suite, Netcat)
-- ✅ Reconnaissance & Network Scanning (Nmap, Wireshark, OpenVAS, hping3, iptables)
-- ✅ Web Application Security (OWASP Top 10)
-- ✅ Exploitation & Post-Exploitation
-- ✅ Incident Response
+- ✅ CIA triad, threat types, and attack vectors
+- ✅ Lab environment setup for Kali Linux and Metasploitable2
+- ✅ Linux fundamentals and networking commands
+- ✅ OSI model, TCP/IP, and subnetting
+- ✅ Cryptography, hashing, and OpenSSL usage
+- ✅ Tool familiarity with Nmap, Wireshark, Burp Suite, and Netcat
+- ✅ Reconnaissance, scanning, and basic firewall analysis
+- ✅ Web application security and OWASP Top 10 concepts
+- ✅ Exploitation, post-exploitation, and incident response
 
 ---
 
 ## 📌 Disclaimer
 
-> All activities in this repository are performed in a **controlled lab environment** for educational purposes only.
-> Unauthorized use of these techniques on real systems without permission is **illegal and unethical**.
+> All activities in this repository were performed in a controlled lab environment for educational purposes only.
+> Unauthorized use of these techniques on real systems without permission is illegal and unethical.
 > This internship follows responsible disclosure and ethical hacking principles.
 
 ---

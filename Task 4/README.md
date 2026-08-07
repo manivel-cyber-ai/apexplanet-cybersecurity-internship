@@ -10,7 +10,7 @@
 
 ## 🎯 Objective
 
-Learn the full penetration testing workflow and responsibly exploit vulnerabilities in a controlled lab environment — covering exploitation, post-exploitation, password attacks, social engineering simulation, malware basics, and system hardening.
+Learn the full penetration testing workflow and responsibly exploit vulnerabilities in a controlled lab environment, covering exploitation, post-exploitation, password attacks, social engineering simulation, malware basics, and system hardening.
 
 ---
 
@@ -18,9 +18,10 @@ Learn the full penetration testing workflow and responsibly exploit vulnerabilit
 
 | File | Description |
 |------|-------------|
-| `task4-notes.md` | Detailed notes covering all 6 topics of Task 4 |
-| `task4-cheatsheet.md` | Quick reference for Metasploit, Hydra, John, msfvenom |
-| `screenshots/` | Evidence screenshots from all activities |
+| `task4-notes.md` | Detailed notes covering the main Task 4 topics |
+| `task4-cheatsheet.md` | Quick reference for Metasploit, Hydra, John, and msfvenom |
+| `malware-analysis/` | Folder containing malware analysis notes and related material |
+| `screenshots/` | Evidence screenshots from the exercises |
 | `README.md` | This file |
 
 ---
@@ -40,29 +41,28 @@ Learn the full penetration testing workflow and responsibly exploit vulnerabilit
 ## ✅ Activities Completed
 
 ### 1. Penetration Testing Methodology
-- Followed full 5-phase pentest workflow:
-  `Recon → Scanning → Exploitation → Post-Exploitation → Reporting`
-- Documented every step with timestamps and screenshots
-- Pre-scan with Nmap: `nmap -sV -O 192.168.93.129`
+- Followed the standard pentest workflow: reconnaissance → scanning → exploitation → post-exploitation → reporting
+- Documented each step with timestamps and screenshots
+- Performed an initial Nmap scan using `nmap -sV -O 192.168.93.129`
 
 ### 2. Exploitation with Metasploit
 
 #### vsftpd 2.3.4 Backdoor Exploit
-```
+```text
 Module  : exploit/unix/ftp/vsftpd_234_backdoor
 Target  : 192.168.93.129 (port 21)
 Result  : Root shell obtained
 ```
 
 #### Samba Usermap Script Exploit
-```
+```text
 Module  : exploit/multi/samba/usermap_script
 Target  : 192.168.93.129 (port 445)
 Result  : Root shell obtained
 ```
 
 #### Post-Exploitation Commands Run
-- `sysinfo` — gathered OS and hardware info
+- `sysinfo` — gathered OS and hardware information
 - `cat /etc/shadow` — dumped password hashes
 - `netstat -tulpn` — listed open ports
 - `ps aux` — listed running processes
@@ -84,21 +84,21 @@ john combined.txt --wordlist=/usr/share/wordlists/rockyou.txt
 ```
 
 ### 4. Social Engineering Simulation
-- Used SET (Social Engineering Toolkit) to clone a login page
+- Used SET to clone a login page
 - Created phishing awareness training materials
-- Demonstrated red flags for identifying phishing attempts
+- Demonstrated common red flags in phishing attempts
 
 ### 5. Malware Basics
-- Performed static analysis: `file`, `strings`, `readelf`, hash verification
-- Performed dynamic analysis: `strace`, `ltrace`, network traffic monitoring
-- Analyzed sample in sandbox — noted system calls and network connections
+- Performed static analysis using `file`, `strings`, `readelf`, and hash verification
+- Performed dynamic analysis using `strace`, `ltrace`, and network monitoring
+- Reviewed the sample in a sandbox and documented the observed behavior
 
 ### 6. System Hardening
-- Enabled UFW firewall with allow/deny rules
+- Enabled UFW with allow and deny rules
 - Blocked Telnet (port 23) and FTP (port 21)
-- Configured SSH hardening: `PermitRootLogin no`
-- Found SUID binaries using `find / -perm -4000`
-- Applied system patches: `apt update && apt upgrade`
+- Configured SSH hardening by disabling root login
+- Identified SUID binaries using `find / -perm -4000`
+- Applied patches with `apt update && apt upgrade`
 
 ---
 
@@ -121,8 +121,8 @@ john combined.txt --wordlist=/usr/share/wordlists/rockyou.txt
 
 | Vulnerability | CVE | Severity | Result |
 |--------------|-----|----------|--------|
-| vsftpd 2.3.4 Backdoor | CVE-2011-2523 | 🔴 Critical | Root shell |
-| Samba Usermap Script | CVE-2007-2447 | 🔴 Critical | Root shell |
+| vsftpd 2.3.4 backdoor | CVE-2011-2523 | 🔴 Critical | Root shell |
+| Samba Usermap script | CVE-2007-2447 | 🔴 Critical | Root shell |
 | Weak SSH credentials | — | 🟠 High | SSH access via brute force |
 | Password reuse | — | 🟠 High | Multiple accounts cracked |
 
@@ -130,16 +130,16 @@ john combined.txt --wordlist=/usr/share/wordlists/rockyou.txt
 
 ## 📦 Deliverables
 
-- [x] Penetration Testing Report with screenshots
-- [x] Metasploit exploitation — vsftpd + Samba exploits
-- [x] Post-exploitation — sysinfo, hashdump, process listing
-- [x] Hydra SSH brute force — credentials found
-- [x] John the Ripper — hashes cracked
-- [x] Social Engineering simulation page (SET)
-- [x] Malware static + dynamic analysis
-- [x] System hardening — UFW, SSH config, SUID audit
-- [x] GitHub Repo with exploitation steps + mitigations
-- [x] 10-min Demo Video on LinkedIn
+- [x] Penetration testing report with screenshots
+- [x] Metasploit exploitation using the vsftpd and Samba exploits
+- [x] Post-exploitation activity including hash dumps and process listing
+- [x] Hydra SSH brute force activity
+- [x] John the Ripper hash cracking activity
+- [x] Social engineering simulation materials
+- [x] Malware static and dynamic analysis notes
+- [x] System hardening steps and evidence
+- [x] GitHub repository with exploitation steps and mitigations
+- [x] Short demo video on LinkedIn
 
 ---
 
@@ -151,8 +151,8 @@ john combined.txt --wordlist=/usr/share/wordlists/rockyou.txt
 
 ---
 
-> ⚠️ All exploitation activities performed exclusively in an isolated lab environment (Metasploitable2) for educational purposes only.
-> Unauthorized access to real systems is illegal under the IT Act and cybercrime laws.
+> ⚠️ All exploitation activities were performed exclusively in an isolated lab environment (Metasploitable2) for educational purposes only.
+> Unauthorized access to real systems is illegal under cybercrime laws.
 > This internship follows responsible disclosure and ethical hacking principles.
 
 *Manivel R | ApexPlanet Internship 2026 | Anna University*

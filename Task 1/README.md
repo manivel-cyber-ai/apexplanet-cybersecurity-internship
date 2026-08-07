@@ -10,7 +10,7 @@
 
 ## 🎯 Objective
 
-Build strong fundamentals in cybersecurity, networking, and cryptography — and set up a professional ethical hacking lab environment.
+Build strong fundamentals in cybersecurity, networking, and cryptography while setting up a professional ethical hacking lab environment.
 
 ---
 
@@ -18,9 +18,9 @@ Build strong fundamentals in cybersecurity, networking, and cryptography — and
 
 | File | Description |
 |------|-------------|
-| `task1-notes.md` | Detailed notes covering all 6 topics of Task 1 |
-| `task1-cheatsheet.md` | Quick reference for Linux, Nmap, Wireshark, OpenSSL, Netcat |
-| `\Screenshots` | Screenshots of Kali Linux, Nmap, Wireshark, OpenSSL, Netcat |
+| `task1-notes.md` | Detailed notes covering the main Task 1 topics |
+| `task1-cheatsheet.md` | Quick reference for Linux, Nmap, Wireshark, OpenSSL, and Netcat |
+| `Screenshots/` | Evidence screenshots from the lab setup and tool demonstrations |
 | `README.md` | This file |
 
 ---
@@ -28,7 +28,7 @@ Build strong fundamentals in cybersecurity, networking, and cryptography — and
 ## 🧪 Lab Setup
 
 ### Architecture
-```
+```text
 [Kali Linux — Attacker Machine]
             |
     Host-Only Network
@@ -40,67 +40,67 @@ Build strong fundamentals in cybersecurity, networking, and cryptography — and
 ### Environment
 | Component | Details |
 |-----------|---------|
-| **Attacker OS** | Kali Linux (Primary OS) |
+| **Attacker OS** | Kali Linux |
 | **Virtualization** | VirtualBox |
 | **Target VM** | Metasploitable2 |
 | **Network** | Host-Only Adapter |
-| **Host Machine** | MY PC |
+| **Host Machine** | Personal workstation |
 
 ---
 
 ## ✅ Topics Covered
 
 ### 1. Cybersecurity Basics
-- CIA Triad — Confidentiality, Integrity, Availability
-- Threat Types — Phishing, Malware, DDoS, SQLi, Brute Force, Ransomware
-- Attack Vectors — Social Engineering, Wireless Attacks, Insider Threats
+- CIA triad — confidentiality, integrity, and availability
+- Threat types — phishing, malware, DDoS, SQL injection, brute force, and ransomware
+- Attack vectors — social engineering, wireless attacks, and insider threats
 
 ### 2. Lab Environment Setup
-- Installed VirtualBox + Metasploitable2
-- Configured Host-Only network adapter
-- Verified connectivity between Kali and target VM
+- Installed VirtualBox and Metasploitable2
+- Configured a host-only network adapter
+- Verified connectivity between Kali and the target VM
 
 ### 3. Linux Fundamentals
-- File system navigation, permissions (chmod, chown)
-- Package management (apt, dpkg)
-- Networking commands (ip, netstat, ping, traceroute)
+- Filesystem navigation and permissions (`chmod`, `chown`)
+- Package management (`apt`, `dpkg`)
+- Networking commands (`ip`, `netstat`, `ping`, `traceroute`)
 
 ### 4. Networking Basics
-- OSI Model — all 7 layers and functions
-- TCP/IP protocol suite, TCP 3-way handshake
-- DNS, HTTP/HTTPS, IP addressing and subnetting
+- OSI model and its seven layers
+- TCP/IP protocol suite and the TCP three-way handshake
+- DNS, HTTP/HTTPS, IP addressing, and subnetting
 
 ### 5. Cryptography Basics
-- Symmetric vs Asymmetric encryption
-- Hashing — MD5, SHA256 using OpenSSL
-- Digital certificates, SSL/TLS
-- Hands-on: Encrypted and decrypted messages using OpenSSL AES-256
+- Symmetric vs. asymmetric encryption
+- Hashing with OpenSSL (for example, MD5 and SHA-256)
+- Digital certificates and SSL/TLS
+- Hands-on encryption and decryption using OpenSSL AES-256
 
 ### 6. Tool Familiarization
-- **Nmap** — Service version detection, OS detection, port scanning
-- **Wireshark** — Packet capture, ICMP/HTTP traffic analysis
-- **Burp Suite** — HTTP request interception via proxy
-- **Netcat** — Listener setup, banner grabbing (SSH + HTTP)
+- **Nmap** — service detection, OS detection, and port scanning
+- **Wireshark** — packet capture and traffic analysis
+- **Burp Suite** — request interception through a proxy
+- **Netcat** — listener setup and banner grabbing
 
 ---
 
 ## 🛠️ Tools Used
 
-| Tool | Purpose | Command Used |
-|------|---------|--------------|
-| Nmap | Port & service scanning | `nmap -sV -O <target>` |
-| Wireshark | Packet capture & analysis | ICMP filter, TCP stream |
-| Burp Suite | Web proxy & request intercept | Manual proxy 127.0.0.1:8080 |
-| Netcat | Banner grabbing & connectivity | `nc -lvp 4444`, `nc <ip> 22` |
-| OpenSSL | Encryption & hashing | AES-256-CBC, SHA256 |
+| Tool | Purpose | Example Command |
+|------|---------|-----------------|
+| Nmap | Port and service scanning | `nmap -sV -O <target>` |
+| Wireshark | Packet capture and analysis | ICMP filter, TCP stream |
+| Burp Suite | Web proxy and request interception | Manual proxy at `127.0.0.1:8080` |
+| Netcat | Banner grabbing and connectivity | `nc -lvp 4444`, `nc <ip> 22` |
+| OpenSSL | Encryption and hashing | AES-256-CBC, SHA-256 |
 
 ---
 
 ## 📦 Deliverables
 
-- [x] Lab Setup Report (screenshots of Kali, Metasploitable2, Wireshark capture)
-- [x] GitHub Repo with notes & Linux cheatsheet
-- [x] 5-min Video walkthrough of lab setup
+- [x] Lab setup report with screenshots
+- [x] GitHub repository with notes and a Linux cheatsheet
+- [x] Short walkthrough video of the lab setup
 
 ---
 
@@ -112,6 +112,6 @@ Build strong fundamentals in cybersecurity, networking, and cryptography — and
 
 ---
 
-> ⚠️ All activities performed in an isolated lab environment for educational purposes only.
+> ⚠️ All activities were performed in an isolated lab environment for educational purposes only.
 
 *Manivel R | ApexPlanet Internship 2026 | Anna University*

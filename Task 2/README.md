@@ -10,7 +10,7 @@
 
 ## 🎯 Objective
 
-Learn reconnaissance techniques, network scanning, vulnerability assessment, packet analysis, and basic firewall configuration against a controlled lab target.
+Learn reconnaissance techniques, network scanning, vulnerability assessment, packet analysis, and basic firewall configuration in a controlled lab environment.
 
 ---
 
@@ -18,11 +18,11 @@ Learn reconnaissance techniques, network scanning, vulnerability assessment, pac
 
 | File | Description |
 |------|-------------|
-| `task2-notes.md` | Detailed notes covering all 5 topics of Task 2 |
-| `task2-cheatsheet.md` | Quick reference for Nmap, Wireshark, iptables |
+| `task2-notes.md` | Detailed notes covering the major Task 2 topics |
+| `task2-cheatsheet.md` | Quick reference for Nmap, Wireshark, and iptables |
 | `task2-nmap-report.txt` | Full Nmap scan output against Metasploitable2 |
-| `task2-openvas-report.pdf` | OpenVAS vulnerability assessment report |
-| `screenshots/` | Evidence screenshots from all activities |
+| `open-vas-report.pdf` | OpenVAS vulnerability assessment report |
+| `ip-tables.png` | Screenshot showing example firewall rule output |
 | `README.md` | This file |
 
 ---
@@ -41,13 +41,13 @@ Learn reconnaissance techniques, network scanning, vulnerability assessment, pac
 ## ✅ Topics Covered
 
 ### 1. Reconnaissance
-**Passive Recon** — no direct contact with target
+**Passive Recon** — no direct contact with the target
 - `whois` — domain registration details
-- `nslookup` / `dig` — DNS resolution and records
-- Google Dorking — finding exposed files/pages
+- `nslookup` and `dig` — DNS resolution and record lookup
+- Google dorking — finding exposed files and pages
 - Shodan — discovering internet-exposed services
 
-**Active Recon** — direct interaction with target
+**Active Recon** — direct interaction with the target
 - Ping sweep with Nmap
 - Banner grabbing with Netcat on ports 22 and 80
 
@@ -55,33 +55,24 @@ Learn reconnaissance techniques, network scanning, vulnerability assessment, pac
 - TCP SYN scan (`-sS`) and UDP scan (`-sU`)
 - Service version detection (`-sV`)
 - OS detection (`-O`)
-- Aggressive scan (`-A`) with full report saved to file
-- Identified open ports: 21/FTP, 22/SSH, 23/Telnet, 80/HTTP, 3306/MySQL and more
+- Aggressive scan (`-A`) with results saved to a text report
+- Identified open ports such as FTP, SSH, Telnet, HTTP, and MySQL
 
 ### 3. Vulnerability Scanning
 - Set up OpenVAS (GVM) on Kali Linux
-- Scanned Metasploitable2 as target
-- Analyzed vulnerability report by severity:
-
-| Severity | Count |
-|----------|-------|
-| Critical | |
-| High | |
-| Medium | |
-| Low | |
-
-> *(Update counts after OpenVAS scan)*
+- Scanned Metasploitable2 as the target
+- Reviewed the report for severity-based findings
 
 ### 4. Packet Analysis with Wireshark
-- Captured HTTP, FTP, DNS traffic
-- Demonstrated FTP plaintext credential capture
-- Simulated SYN flood attack using hping3
-- Analyzed flood traffic with `tcp.flags.syn == 1` filter
+- Captured HTTP, FTP, and DNS traffic
+- Demonstrated FTP credential exposure in plaintext
+- Simulated SYN flood traffic using hping3
+- Examined traffic using filters such as `tcp.flags.syn == 1`
 
 ### 5. Firewall Basics with iptables
-- Created rules to allow/deny specific ports
-- Blocked port 22 (SSH) and demonstrated connection failure
-- Reset rules with `iptables -F`
+- Created rules to allow or deny specific ports
+- Blocked port 22 (SSH) and demonstrated the resulting connection failure
+- Reset rules using `iptables -F`
 
 ---
 
@@ -89,48 +80,44 @@ Learn reconnaissance techniques, network scanning, vulnerability assessment, pac
 
 | Tool | Purpose | Key Command |
 |------|---------|-------------|
-| Nmap | Port & service scanning | `nmap -A -oN report.txt <target>` |
-| Wireshark | Packet capture & analysis | FTP filter, SYN flood filter |
-| OpenVAS | Vulnerability scanning | Web UI at 127.0.0.1:9392 |
+| Nmap | Port and service scanning | `nmap -A -oN report.txt <target>` |
+| Wireshark | Packet capture and analysis | FTP filter, SYN flood filter |
+| OpenVAS | Vulnerability scanning | Web UI at `127.0.0.1:9392` |
 | hping3 | SYN flood simulation | `hping3 -S --flood -p 80 <target>` |
 | iptables | Firewall rule management | `iptables -A INPUT -p tcp --dport 22 -j DROP` |
 | Netcat | Banner grabbing | `nc <target> 22` |
-| whois/dig | Passive reconnaissance | `dig google.com`, `whois domain.com` |
+| whois / dig | Passive reconnaissance | `dig google.com`, `whois domain.com` |
 
 ---
 
 ## 🔍 Key Findings
 
 ### Nmap Scan Summary
-```
+```text
 Target: 192.168.56.101 (Metasploitable2)
-Open Ports Found:
+Open ports found:
   21/tcp  - FTP     (vsftpd 2.3.4)
   22/tcp  - SSH     (OpenSSH 4.7p1)
   23/tcp  - Telnet
   80/tcp  - HTTP    (Apache 2.2.8)
   3306/tcp - MySQL  (5.0.51a)
-  ...
-OS Detected: Linux 2.6.x
+OS detected: Linux 2.6.x
 ```
 
 ### Wireshark FTP Finding
-> FTP transmits credentials in **plaintext** — username and password were clearly visible in the packet capture. This demonstrates why FTP should be replaced with SFTP or FTPS.
-
-### OpenVAS Key Vulnerabilities
-> *(Add top 3 findings after scan)*
+> FTP transmitted credentials in plaintext, which highlights the importance of using SFTP or FTPS instead.
 
 ---
 
 ## 📦 Deliverables
 
-- [x] Nmap Scan Report (`task2-nmap-report.txt`)
-- [x] OpenVAS Vulnerability Report (PDF)
-- [x] Wireshark FTP credential capture (screenshot)
-- [x] SYN flood simulation (screenshot)
-- [x] iptables firewall rules (screenshot)
-- [x] GitHub Repo with scan analysis
-- [x] 5-min Demo Video on LinkedIn
+- [x] Nmap scan report in `task2-nmap-report.txt`
+- [x] OpenVAS vulnerability report in `open-vas-report.pdf`
+- [x] Wireshark FTP capture evidence
+- [x] SYN flood simulation evidence
+- [x] iptables firewall rule evidence
+- [x] GitHub repository with scan analysis
+- [x] Short demo video on LinkedIn
 
 ---
 
@@ -142,7 +129,7 @@ OS Detected: Linux 2.6.x
 
 ---
 
-> ⚠️ All activities performed in an isolated lab environment for educational purposes only. Unauthorized scanning of real systems without permission is illegal.
+> ⚠️ All activities were performed in an isolated lab environment for educational purposes only. Unauthorized scanning of real systems without permission is illegal.
 
 *Manivel R | ApexPlanet Internship 2026 | Anna University*
 

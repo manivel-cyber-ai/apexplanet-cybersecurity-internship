@@ -10,7 +10,7 @@
 
 ## 🎯 Objective
 
-Identify and exploit OWASP Top 10 vulnerabilities in a controlled lab environment using DVWA (Damn Vulnerable Web Application) on Metasploitable2.
+Identify and exploit OWASP Top 10 vulnerabilities in a controlled lab environment using DVWA on Metasploitable2.
 
 ---
 
@@ -18,10 +18,10 @@ Identify and exploit OWASP Top 10 vulnerabilities in a controlled lab environmen
 
 | File | Description |
 |------|-------------|
-| `task3-notes.md` | Detailed notes covering all 6 topics of Task 3 |
-| `task3-cheatsheet.md` | Quick reference for SQLi, XSS, CSRF, LFI, Burp Suite |
-| `csrf-demo.html` | CSRF attack demo page (educational use only) |
-| `screenshots/` | Evidence screenshots from all attack demonstrations |
+| `task3-notes.md` | Detailed notes covering the main Task 3 topics |
+| `task3-cheatsheet.md` | Quick reference for SQL injection, XSS, CSRF, LFI, and Burp Suite |
+| `csrf-demo.html` | CSRF attack demo page for educational use |
+| `screenshots/` | Evidence screenshots from the attack demonstrations |
 | `README.md` | This file |
 
 ---
@@ -33,7 +33,7 @@ Identify and exploit OWASP Top 10 vulnerabilities in a controlled lab environmen
 | **Attacker OS** | Kali Linux |
 | **Target VM** | Metasploitable2 |
 | **Target IP** | 192.168.56.101 |
-| **Web App** | DVWA at http://192.168.56.101/dvwa |
+| **Web App** | DVWA at `http://192.168.56.101/dvwa` |
 | **DVWA Security** | Low (for demonstration) |
 | **Proxy Tool** | Burp Suite Community Edition |
 
@@ -42,43 +42,37 @@ Identify and exploit OWASP Top 10 vulnerabilities in a controlled lab environmen
 ## ✅ Vulnerabilities Demonstrated
 
 ### 1. SQL Injection (SQLi)
-- Tested input fields with `'` — confirmed vulnerability via error
-- Extracted database name, table names, column names
-- Dumped username and password hashes from `users` table using UNION-based SQLi
-- Demonstrated prevention using Prepared Statements
+- Tested input fields with `'` and confirmed vulnerability through error output
+- Extracted database names, table names, and column names
+- Dumped usernames and password hashes from the `users` table using UNION-based SQLi
+- Demonstrated prevention using prepared statements
 
 ### 2. Cross-Site Scripting (XSS)
-- **Reflected XSS** — injected `<script>alert(document.cookie)</script>` via URL parameter
-- **Stored XSS** — persisted malicious script in database via message field
-- Demonstrated cookie harvesting using Python HTTP server
-- Mitigation: Content Security Policy (CSP) header + input encoding
+- **Reflected XSS** — injected a script via a URL parameter
+- **Stored XSS** — persisted a malicious script through a message field
+- Demonstrated cookie harvesting using a Python HTTP server
+- Mitigation: content security policy and proper input encoding
 
 ### 3. Cross-Site Request Forgery (CSRF)
-- Created `csrf-demo.html` — hidden form auto-submits to change admin password
-- Demonstrated attack with victim logged into DVWA in another tab
-- Password successfully changed without user interaction
-- Prevention: CSRF tokens, SameSite cookie attribute
+- Created `csrf-demo.html` as a hidden form that auto-submits to change an admin password
+- Demonstrated the attack with the victim already logged into DVWA in another tab
+- Prevention: CSRF tokens and SameSite cookie attributes
 
 ### 4. File Inclusion Attacks
-- **LFI** — Read `/etc/passwd` via `?page=../../../../etc/passwd`
-- **RFI** — Hosted PHP webshell on Kali, included via URL parameter
-- Executed OS commands (`id`, `whoami`, `cat /etc/passwd`) through RFI shell
-- Prevention: Input whitelist, `allow_url_include=Off` in php.ini
+- **LFI** — read `/etc/passwd` through a URL parameter
+- **RFI** — host a PHP web shell on Kali and include it through the target application
+- Executed OS commands such as `id`, `whoami`, and `cat /etc/passwd`
+- Prevention: input whitelisting and `allow_url_include=Off`
 
 ### 5. Burp Suite Advanced
 - Intercepted and modified login requests via proxy
 - Used Repeater to manually test different parameter values
-- Used Intruder for password fuzzing with rockyou.txt wordlist
-- Demonstrated Decoder for Base64/URL encoding/decoding
+- Used Intruder for password fuzzing with a wordlist
+- Demonstrated Decoder for Base64 and URL encoding
 
 ### 6. Web Security Headers
-- Analyzed headers using `curl -I` and securityheaders.com
-- Added security headers to Apache configuration:
-  - `X-Frame-Options: DENY`
-  - `X-XSS-Protection: 1; mode=block`
-  - `X-Content-Type-Options: nosniff`
-  - `Content-Security-Policy: default-src 'self'`
-  - `Strict-Transport-Security: max-age=31536000`
+- Analyzed response headers using `curl -I`
+- Added security headers to the Apache configuration, including CSP and HSTS settings
 
 ---
 
@@ -86,12 +80,12 @@ Identify and exploit OWASP Top 10 vulnerabilities in a controlled lab environmen
 
 | Tool | Purpose |
 |------|---------|
-| Burp Suite | HTTP proxy, request interception, fuzzing |
-| DVWA | Target vulnerable web application |
+| Burp Suite | HTTP proxy, request interception, and fuzzing |
+| DVWA | Vulnerable target web application |
 | sqlmap | Automated SQL injection testing |
-| Nikto | Web server vulnerability scanner |
+| Nikto | Web server vulnerability scanning |
 | curl | HTTP request analysis and header checking |
-| Python HTTP Server | Hosting malicious files for RFI/XSS demo |
+| Python HTTP Server | Hosting files for demonstration purposes |
 | Firefox | Browser with Burp proxy configured |
 
 ---
@@ -100,27 +94,26 @@ Identify and exploit OWASP Top 10 vulnerabilities in a controlled lab environmen
 
 | Vulnerability | Severity | Impact |
 |--------------|----------|--------|
-| SQL Injection | 🔴 Critical | Full database access, credential dump |
-| Stored XSS | 🔴 Critical | Cookie theft, session hijacking |
-| Reflected XSS | 🟠 High | Phishing, credential theft |
-| CSRF | 🟠 High | Unauthorized actions as victim |
+| SQL Injection | 🔴 Critical | Full database access and credential exposure |
+| Stored XSS | 🔴 Critical | Cookie theft and session hijacking |
+| Reflected XSS | 🟠 High | Phishing and credential theft |
+| CSRF | 🟠 High | Unauthorized actions as the victim |
 | LFI | 🟠 High | Sensitive file disclosure |
 | RFI | 🔴 Critical | Remote code execution |
-| Missing Security Headers | 🟡 Medium | Clickjacking, MIME sniffing |
+| Missing Security Headers | 🟡 Medium | Clickjacking and MIME sniffing risk |
 
 ---
 
 ## 📦 Deliverables
 
-- [x] SQL Injection — credentials extracted from DVWA database
-- [x] XSS — Reflected and Stored demonstrated with cookie theft
-- [x] CSRF — Password change attack via `csrf-demo.html`
-- [x] LFI — `/etc/passwd` read via URL parameter
-- [x] RFI — Remote PHP shell executed OS commands
-- [x] Burp Suite — Request intercepted + Intruder fuzzing done
-- [x] Security Headers — Analyzed and added to Apache config
-- [x] GitHub Repo with attack scenarios + mitigation notes
-- [x] 8-min Video Demo on LinkedIn
+- [x] SQL injection demonstration with extracted credentials
+- [x] Reflected and stored XSS demonstrations
+- [x] CSRF password change attack via `csrf-demo.html`
+- [x] LFI and RFI demonstrations
+- [x] Burp Suite interception and fuzzing activity
+- [x] Security header analysis and mitigation notes
+- [x] GitHub repository with attack scenarios and mitigation notes
+- [x] Short demo video on LinkedIn
 
 ---
 
@@ -132,8 +125,8 @@ Identify and exploit OWASP Top 10 vulnerabilities in a controlled lab environmen
 
 ---
 
-> ⚠️ All attacks performed exclusively in an isolated lab environment for educational purposes.
-> Performing these attacks on real systems without authorization is illegal under the IT Act and cybercrime laws.
+> ⚠️ All attacks were performed exclusively in an isolated lab environment for educational purposes.
+> Performing these attacks on real systems without authorization is illegal under cybercrime laws.
 
 *Manivel R | ApexPlanet Internship 2026 | Anna University*
 
